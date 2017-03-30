@@ -15,7 +15,7 @@ RUN apt-get update -y \
     libschroedinger-1.0-0 libschroedinger-dev libshine3 libshine-dev libsnappy-dev libsnappy1v5 libsoxr-dev \
     libsoxr0 libssh-4 libssh-dev libspeex1  libspeex-dev libtwolame0 libtwolame-dev libwavpack1 libwavpack-dev \
     libwebp-dev libwebp5 libxvidcore-dev libxvidcore4 libzmq3-dev libzmq5 libzvbi0  libzvbi-dev libopenal1 \
-    libopenal-dev libcdio-paranoia1  libcdio-paranoia-dev libgnutls30 libgnutls28-dev
+    libopenal-dev libcdio-paranoia1  libcdio-paranoia-dev libgnutls30 libgnutls28-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*                                                        
 
