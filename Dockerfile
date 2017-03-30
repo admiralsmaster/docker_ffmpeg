@@ -1,6 +1,8 @@
 FROM nuagebec/ubuntu:16.04                                                                                                                                                                                              
 LABEL maintainer "Ariel Kuechler <github.ariel@kuechler.info>"
 
+VOLUME /data/persistent
+
 RUN export HOME_DIR=/root
 
 RUN apt-get update -y \
