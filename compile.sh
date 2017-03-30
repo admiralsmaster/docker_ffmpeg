@@ -66,6 +66,8 @@ PATH="$HOME/bin:$PATH" make
 make install
 
 
+
+
 cd ~/ffmpeg_sources
 wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
 tar xjvf ffmpeg-snapshot.tar.bz2
@@ -87,15 +89,40 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
 --enable-libvpx \
 --enable-libx264 \
 --enable-libx265 \
---enable-nonfree
+--enable-nonfree \
+--enable-avresample \
+--enable-avisynth \
+--enable-ladspa  \
+--enable-libbs2b \
+--enable-libcaca --enable-libcdio --enable-libfontconfig \
+--enable-libfribidi --enable-libgme --enable-libgsm \
+--enable-libmodplug --enable-libopenjpeg \
+--enable-libpulse --enable-librtmp --enable-libschroedinger \
+--enable-libshine --enable-libsnappy --enable-libsoxr \
+--enable-libspeex --enable-libssh \
+--enable-libtwolame \
+--enable-libwavpack --enable-libwebp --enable-libxvid \
+--enable-libzvbi --enable-openal --enable-opengl \
+--enable-libdc1394 --enable-libiec61883 --enable-libzmq --enable-frei0r \
+--enable-libopencv \
+--disable-stripping --disable-decoder=libopenjpeg \
+--enable-gnutls \
+--disable-decoder=libschroedinger \
+--enable-libflite
+#--enable-libbluray
+#--enable-x11grab
 PATH="$HOME/bin:$PATH" make
 make install
 hash -r
 
+
+
 mkdir ~/man
-mv -fv ~/ffmpeg_build/share/man ~/man
+mv -fv ~/ffmpeg_build/share/man/* ~/man
 echo "MANPATH_MAP ~/bin ~/man" >> ~/.manpath
 
 rm -rf ~/ffmpeg_build ~/ffmpeg_sources
+
+echo "export PATH=\${PATH}:~/bin/" >> ~/.profile
 
 
