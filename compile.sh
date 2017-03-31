@@ -116,13 +116,13 @@ make install
 hash -r
 
 
-
+# create manual folder and copy created manuals into it
 mkdir ~/man
 mv -fv ~/ffmpeg_build/share/man/* ~/man
-echo "MANPATH_MAP ~/bin ~/man" >> ~/.manpath
 
+# remove source and build folder
 rm -rf ~/ffmpeg_build ~/ffmpeg_sources
 
-echo "export PATH=\${PATH}:~/bin/" >> ~/.profile
-
-
+# set PATH and MANPATH
+echo "export PATH=\${PATH}:$HOME/bin/" >> $HOME/.profile
+echo "export MANPATH=\${MANPATH}:$HOME/man" >> $HOME/.profile
