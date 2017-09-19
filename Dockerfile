@@ -4,6 +4,7 @@ LABEL maintainer "Ariel Kuechler <github.ariel@kuechler.info>"
 VOLUME /data/persistent
 
 RUN export HOME_DIR=/root
+ENV HOME_DIR /root
 
 RUN apt-get update -y \
   && apt-get -y upgrade \
