@@ -13,6 +13,16 @@ make install
 
 
 cd ~/ffmpeg_sources
+wget http://www.nasm.us/pub/nasm/releasebuilds/2.13.01/nasm-2.13.01.tar.bz2
+tar xjvf nasm-2.13.01.tar.bz2
+cd nasm-2.13.01
+./autogen.sh
+PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin"
+PATH="$HOME/bin:$PATH" make
+make install
+
+
+cd ~/ffmpeg_sources
 wget http://download.videolan.org/pub/x264/snapshots/last_x264.tar.bz2
 tar xjvf last_x264.tar.bz2
 cd x264-snapshot*
@@ -49,22 +59,20 @@ make install
 
 
 cd ~/ffmpeg_sources
-wget http://downloads.xiph.org/releases/opus/opus-1.1.4.tar.gz
-tar xzvf opus-1.1.4.tar.gz
-cd opus-1.1.4
+wget https://archive.mozilla.org/pub/opus/opus-1.1.5.tar.gz
+tar xzvf opus-1.1.5.tar.gz
+cd opus-1.1.5
 ./configure --prefix="$HOME/ffmpeg_build" --disable-shared
 make
 make install
 
 
 cd ~/ffmpeg_sources
-wget http://storage.googleapis.com/downloads.webmproject.org/releases/webm/libvpx-1.6.1.tar.bz2
-tar xjvf libvpx-1.6.1.tar.bz2
-cd libvpx-1.6.1
-PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --disable-examples --disable-unit-tests
+git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
+cd libvpx
+PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth
 PATH="$HOME/bin:$PATH" make
 make install
-
 
 
 
