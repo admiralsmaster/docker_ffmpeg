@@ -3,7 +3,6 @@ LABEL maintainer "Ariel Kuechler <github.ariel@kuechler.info>"
 
 VOLUME /data/persistent
 
-RUN export HOME_DIR=/root
 ENV HOME_DIR /root
 
 RUN apt-get update -y \
@@ -24,4 +23,6 @@ RUN apt-get update -y \
 
 COPY compile.sh ${HOME_DIR}/
 
-RUN chmod u+x ${HOME_DIR}/compile.sh && ${HOME_DIR}/compile.sh
+RUN chmod u+x ${HOME_DIR}/compile.sh
+
+RUN ${HOME_DIR}/compile.sh
