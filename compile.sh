@@ -97,7 +97,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
 --enable-libcaca --enable-libcdio --enable-libfontconfig \
 --enable-libfribidi --enable-libgme --enable-libgsm \
 --enable-libmodplug --enable-libopenjpeg \
---enable-libpulse --enable-librtmp --enable-libschroedinger \
+--enable-libpulse --enable-librtmp \
 --enable-libshine --enable-libsnappy --enable-libsoxr \
 --enable-libspeex --enable-libssh \
 --enable-libtwolame \
@@ -107,10 +107,11 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
 --enable-libopencv \
 --disable-stripping --disable-decoder=libopenjpeg \
 --enable-gnutls \
---disable-decoder=libschroedinger \
 --enable-libflite
 #--enable-libbluray
 #--enable-x11grab
+#--enable-libschroedinger
+#--disable-decoder=libschroedinger \
 PATH="$HOME/bin:$PATH" make
 make install
 hash -r
