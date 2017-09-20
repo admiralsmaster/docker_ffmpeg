@@ -11,7 +11,7 @@ RUN apt-get update -y \
   && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     man-db autoconf automake build-essential libass-dev libfreetype6-dev \                                                        
     libsdl2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev \                                                                                                                  
-    libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev cmake mercurial nasm tmux \
+    libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev cmake mercurial tmux \
     frei0r-plugins frei0r-plugins-dev ladspa-sdk libiec61883-0 libiec61883-dev libavc1394-0 libavc1394-dev \
     libbs2b0 libbs2b-dev libcaca0 libcaca-dev libflite1 flite1-dev libgme0 libgme-dev libgsm1 libgsm1-dev  \
     libmodplug1  libmodplug-dev libopencv-dev libopenjpeg5 libopenjpeg-dev librtmp1 librtmp-dev \
