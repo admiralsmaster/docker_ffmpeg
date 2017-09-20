@@ -135,3 +135,6 @@ rm -rf ~/ffmpeg_build ~/ffmpeg_sources
 # set PATH and MANPATH
 echo "export PATH=\${PATH}:$HOME/bin/" >> $HOME/.profile
 echo "export MANPATH=\${MANPATH}:$HOME/man" >> $HOME/.profile
+
+ls -al $HOME/bin/ffmpeg
+exit $?
