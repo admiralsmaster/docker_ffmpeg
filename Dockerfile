@@ -5,7 +5,6 @@ VOLUME /data/persistent
 
 ENV HOME_DIR /root
 
-COPY compile.sh ${HOME_DIR}/
 
 RUN apt-get update -y \
   && apt-get -y upgrade \
@@ -21,6 +20,10 @@ RUN apt-get update -y \
     libwebp-dev libwebp5 libxvidcore-dev libxvidcore4 libzmq3-dev libzmq5 libzvbi0  libzvbi-dev libopenal1 \
     libopenal-dev libcdio-paranoia1  libcdio-paranoia-dev libgnutls30 libgnutls28-dev \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-  && chmod u+x ${HOME_DIR}/compile.sh \
-  && ${HOME_DIR}/compile.sh
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  
+COPY compile.sh ${HOME_DIR}/
+
+RUN chmod u+x ${HOME_DIR}/compile.sh
+
+RUN ${HOME_DIR}/compile.sh
